@@ -79,6 +79,10 @@
             display: block;
             order: 1; /*High priority for First-Name*/
         }
+        input[value="a" i] ~ #results #result0::before {content: "𝐀urora Pleguezelo";}
+        input[value="a" i] ~ #results #result15::before {content: "𝐀lexandre Collin";}
+        input[value="a" i] ~ #results #result16::before {content: "𝐀lexandre Meunier";}
+        input[value="a" i] ~ #results #result22::before {content: "𝐀lexandria Ocasio";}
 
         /* Typing 'Pleguezelo' shows result16, but puts it at the bottom */
         input[value="p" i] ~ #results #result0,
@@ -94,6 +98,17 @@
             display: block;
             order: 50; /* Lower priority than first-name matches */
         }
+        input[value="p" i] ~ #results #result0::before { content: "Aurora 𝐏leguezelo"; }
+        input[value="pl" i] ~ #results #result0::before { content: "Aurora 𝐏𝐥eguezelo"; }
+        input[value="ple" i] ~ #results #result0::before { content: "Aurora 𝐏𝐥𝐞guezelo"; }
+        input[value="pleg" i] ~ #results #result0::before { content: "Aurora 𝐏𝐥𝐞𝐠uezelo"; }
+        input[value="plegu" i] ~ #results #result0::before { content: "Aurora 𝐏𝐥𝐞𝐠𝐮ezelo"; }
+        input[value="plegue" i] ~ #results #result0::before { content: "Aurora 𝐏𝐥𝐞𝐠𝐮𝐞zelo"; }
+        input[value="pleguez" i] ~ #results #result0::before { content: "Aurora 𝐏𝐥𝐞𝐠𝐮𝐞𝐳elo"; }
+        input[value="plegueze" i] ~ #results #result0::before { content: "Aurora 𝐏𝐥𝐞𝐠𝐮𝐞𝐳𝐞lo"; }
+        input[value="pleguezel" i] ~ #results #result0::before { content: "Aurora 𝐏𝐥𝐞𝐠𝐮𝐞𝐳𝐞𝐥o"; }
+        input[value="pleguezelo" i] ~ #results #result0::before { content: "Aurora 𝐏𝐥𝐞𝐠𝐮𝐞𝐳𝐞𝐥𝐨"; }
+
         /* Typing 'Collin' shows result16, but puts it at the bottom */
         input[value="c" i] ~ #results #result15,
         input[value="co" i] ~ #results #result15,
@@ -104,6 +119,12 @@
             display: block;
             order: 50; /* Lower priority than first-name matches */
         }
+        input[value="c" i] ~ #results #result15::before { content: "Alexandre 𝐂ollin"; }
+        input[value="co" i] ~ #results #result15::before { content: "Alexandre 𝐂𝐨llin"; }
+        input[value="col" i] ~ #results #result15::before { content: "Alexandre 𝐂𝐨𝐥lin"; }
+        input[value="coll" i] ~ #results #result15::before { content: "Alexandre 𝐂𝐨𝐥𝐥in"; }
+        input[value="colli" i] ~ #results #result15::before { content: "Alexandre 𝐂𝐨𝐥𝐥𝐢n"; }
+        input[value="collin" i] ~ #results #result15::before { content: "Alexandre 𝐂𝐨𝐥𝐥𝐢𝐧"; }
 
         /* Typing 'Meunier' shows result16, but puts it at the bottom */
         input[value="m" i] ~ #results #result16,
@@ -116,6 +137,14 @@
             display: block;
             order: 50; /* Lower priority than first-name matches */
         }
+        input[value="m" i] ~ #results #result16::before { content: "Alexandre 𝐌eunier"; }
+        input[value="me" i] ~ #results #result16::before { content: "Alexandre 𝐌𝐞unier"; }
+        input[value="meu" i] ~ #results #result16::before { content: "Alexandre 𝐌𝐞𝐮nier"; }
+        input[value="meun" i] ~ #results #result16::before { content: "Alexandre 𝐌𝐞𝐮𝐧ier"; }
+        input[value="meuni" i] ~ #results #result16::before { content: "Alexandre 𝐌𝐞𝐮𝐧𝐢er"; }
+        input[value="meunie" i] ~ #results #result16::before { content: "Alexandre 𝐌𝐞𝐮𝐧𝐢𝐞r"; }
+        input[value="meunier" i] ~ #results #result16::before { content: "Alexandre 𝐌𝐞𝐮𝐧𝐢𝐞𝐫"; }
+        
 
         /* Typing 'Ocasio' shows result16, but puts it at the bottom */
         input[value="o" i] ~ #results #result22,
@@ -127,6 +156,12 @@
             display: block;
             order: 50; /* Lower priority than first-name matches */
         }
+        input[value="o" i] ~ #results #result22::before { content: "Alexandria 𝐎casio"; }
+        input[value="oc" i] ~ #results #result22::before { content: "Alexandria 𝐎𝐜asio"; }
+        input[value="oca" i] ~ #results #result22::before { content: "Alexandria 𝐎𝐜𝐚sio"; }
+        input[value="ocas" i] ~ #results #result22::before { content: "Alexandria 𝐎𝐜𝐚𝐬io"; }
+        input[value="ocasi" i] ~ #results #result22::before { content: "Alexandria 𝐎𝐜𝐚𝐬𝐢o"; }
+        input[value="ocasio" i] ~ #results #result22::before { content: "Alexandria 𝐎𝐜𝐚𝐬𝐢𝐨"; }
 
         /* Typing 'al' filters out Aurora, shows all Alexes */
         input[value="al" i] ~ #results #result15,
@@ -135,6 +170,10 @@
             display: block;
             order: 1;
         }
+        input[value="al" i] ~ #results #result15::before { content: "𝐀𝐥exandre Collin"; }
+        input[value="al" i] ~ #results #result16::before { content: "𝐀𝐥exandre Meunier"; }
+        input[value="al" i] ~ #results #result22::before { content: "𝐀𝐥exandria Ocasio"; }
+
 
         /* Typing 'ale' filters out Aurora, shows all Alexes */
         input[value="ale" i] ~ #results #result15,
@@ -143,6 +182,10 @@
             display: block;
             order: 1;
         }
+        input[value="ale" i] ~ #results #result15::before { content: "𝐀𝐥𝐞xandre Collin"; }
+        input[value="ale" i] ~ #results #result16::before { content: "𝐀𝐥𝐞xandre Meunier"; }
+        input[value="ale" i] ~ #results #result22::before { content: "𝐀𝐥𝐞xandria Ocasio"; }
+
 
         /* Typing 'alex' filters out Aurora, shows all Alexes */
         input[value="alex" i] ~ #results #result15,
@@ -151,6 +194,10 @@
             display: block;
             order: 1;
         }
+        input[value="alex" i] ~ #results #result15::before { content: "𝐀𝐥𝐞𝐱andre Collin"; }
+        input[value="alex" i] ~ #results #result16::before { content: "𝐀𝐥𝐞𝐱andre Meunier"; }
+        input[value="alex" i] ~ #results #result22::before { content: "𝐀𝐥𝐞𝐱andria Ocasio"; }
+
 
         /* Typing 'alexa' filters out Aurora, shows all Alexes */
         input[value="alexa" i] ~ #results #result15,
@@ -159,6 +206,10 @@
             display: block;
             order: 1;
         }
+        input[value="alexa" i] ~ #results #result15::before { content: "𝐀𝐥𝐞𝐱𝐚ndre Collin"; }
+        input[value="alexa" i] ~ #results #result16::before { content: "𝐀𝐥𝐞𝐱𝐚ndre Meunier"; }
+        input[value="alexa" i] ~ #results #result22::before { content: "𝐀𝐥𝐞𝐱𝐚ndria Ocasio"; }
+
 
         /* Typing 'alexan' filters out Aurora, shows all Alexes */
         input[value="alexan" i] ~ #results #result15,
@@ -167,6 +218,10 @@
             display: block;
             order: 1;
         }
+        input[value="alexan" i] ~ #results #result15::before { content: "𝐀𝐥𝐞𝐱𝐚𝐧dre Collin"; }
+        input[value="alexan" i] ~ #results #result16::before { content: "𝐀𝐥𝐞𝐱𝐚𝐧dre Meunier"; }
+        input[value="alexan" i] ~ #results #result22::before { content: "𝐀𝐥𝐞𝐱𝐚𝐧dria Ocasio"; }
+
 
         /* Typing 'alexand' filters out Aurora, shows all Alexes */
         input[value="alexand" i] ~ #results #result15,
@@ -175,6 +230,10 @@
             display: block;
             order: 1;
         }
+        input[value="alexand" i] ~ #results #result15::before { content: "𝐀𝐥𝐞𝐱𝐚𝐧𝐝re Collin"; }
+        input[value="alexand" i] ~ #results #result16::before { content: "𝐀𝐥𝐞𝐱𝐚𝐧𝐝re Meunier"; }
+        input[value="alexand" i] ~ #results #result22::before { content: "𝐀𝐥𝐞𝐱𝐚𝐧𝐝ria Ocasio"; }
+
 
         /* Typing 'alexandr' filters out Aurora, shows all Alexes */
         input[value="alexandr" i] ~ #results #result15,
@@ -183,6 +242,9 @@
             display: block;
             order: 1;
         }
+        input[value="alexandre" i] ~ #results #result15::before { content: "𝐀𝐥𝐞𝐱𝐚𝐧𝐝𝐫e Collin"; }
+        input[value="alexandre" i] ~ #results #result16::before { content: "𝐀𝐥𝐞𝐱𝐚𝐧𝐝𝐫e Meunier"; }
+        input[value="alexandr" i] ~ #results #result22::before { content: "𝐀𝐥𝐞𝐱𝐚𝐧𝐝𝐫ia Ocasio"; }
 
         /* Typing 'alexandrie' shows ONLY Alexandria */
         input[value="alexandre" i] ~ #results #result15,
@@ -190,6 +252,8 @@
             display: block;
             order: 1;
         }
+        input[value="alexandre" i] ~ #results #result15::before { content: "𝐀𝐥𝐞𝐱𝐚𝐧𝐝𝐫𝐞 Collin"; }
+        input[value="alexandre" i] ~ #results #result16::before { content: "𝐀𝐥𝐞𝐱𝐚𝐧𝐝𝐫𝐞 Meunier"; }
 
         /* Typing 'alexandri' shows ONLY Alexandria */
         input[value="alexandri" i] ~ #results #result22,
@@ -197,6 +261,8 @@
             display: block;
             order: 1;
         }
+        input[value="alexandri" i] ~ #results #result22::before { content: "𝐀𝐥𝐞𝐱𝐚𝐧𝐝𝐫𝐢a Ocasio"; }
+        input[value="alexandria" i] ~ #results #result22::before { content: "𝐀𝐥𝐞𝐱𝐚𝐧𝐝𝐫𝐢𝐚 Ocasio"; }
 
         /* Aurora specific path */
         input[value="au" i] ~ #results #result0,
@@ -207,6 +273,12 @@
             display: block;
             order: 1;
         }
+        input[value="a" i] ~ #results #result0::before { content: "𝐀urora Pleguezelo"; }
+        input[value="au" i] ~ #results #result0::before { content: "𝐀𝐮rora Pleguezelo"; }
+        input[value="aur" i] ~ #results #result0::before { content: "𝐀𝐮𝐫ora Pleguezelo"; }
+        input[value="auro" i] ~ #results #result0::before { content: "𝐀𝐮𝐫𝐨ra Pleguezelo"; }
+        input[value="auror" i] ~ #results #result0::before { content: "𝐀𝐮𝐫𝐨𝐫a Pleguezelo"; }
+        input[value="aurora" i] ~ #results #result0::before { content: "𝐀𝐮𝐫𝐨𝐫𝐚 Pleguezelo"; }
 
     </style>
 </head>
