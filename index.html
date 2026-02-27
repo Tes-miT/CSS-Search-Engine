@@ -3,9 +3,81 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>The CSS Attribute Hack</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-top: 50px;
+            background-color: #f4f4f9;
+        }
+
+        .container {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+
+        input {
+            padding: 10px;
+            font-size: 1.1rem;
+            border: 2px solid #ddd;
+            border-radius: 4px;
+            outline: none;
+            transition: border-color 0.3s;
+        }
+
+        input:focus {
+            border-color: #3498db;
+        }
+
+        /* The Empty Div */
+        #result {
+            margin-top: 20px;
+            min-height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 4px;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            background: #eee;
+            color: #777;
+        }
+
+        /* THE HACK: Case-insensitive match for "tim" */
+        input[value="tim" i] ~ #result {
+            background-color: #2ecc71;
+            color: white;
+            transform: scale(1.1);
+            box-shadow: 0 10px 20px rgba(46, 204, 113, 0.3);
+        }
+
+        /* Injecting content via pseudo-element */
+        input[value="tim" i] ~ #result::before {
+            content: "Access Granted: Welcome, Tim!";
+            font-weight: bold;
+        }
+
+        /* Default state content */
+        #result::before {
+            content: "Waiting for the right name...";
+        }
+    </style>
 </head>
 <body>
-    
+
+    <div class="container">
+        <h2>Who are you?</h2>
+        <p>Type "tim" (case doesn't matter) to trigger the CSS.</p>
+        
+        <input type="search" placeholder="Type 'tim'..." oninput="this.setAttribute('value', this.value)">
+        
+        <div id="result"></div>
+    </div>
+
 </body>
 </html>
