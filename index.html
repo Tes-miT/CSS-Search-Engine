@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The CSS Attribute Hack</title>
+    <title>CSS N-Gram Search Hack</title>
     <style>
         body {
-            font-family: sans-serif;
+            font-family: 'Segoe UI', sans-serif;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -18,109 +18,152 @@
             background: white;
             padding: 2rem;
             border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
             text-align: center;
+            width: 450px;
         }
 
         input {
-            padding: 10px;
+            padding: 12px;
             font-size: 1.1rem;
             border: 2px solid #ddd;
-            border-radius: 4px;
+            border-radius: 25px;
             outline: none;
-            transition: border-color 0.3s;
+            transition: all 0.3s;
+            width: 90%;
+            margin-bottom: 20px;
         }
 
         input:focus {
             border-color: #3498db;
+            box-shadow: 0 0 8px rgba(52, 152, 219, 0.2);
         }
 
-        /* The Empty Div */
         #results {
-            margin-top: 20px;
-            min-height: 50px;
             display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 4px;
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            background: #eee;
-            color: #777;
+            flex-direction: column;
+            gap: 10px;
         }
 
         /* 1. Hide all result divs by default */
         #results div {
             display: none;
             padding: 15px;
-            background: white;
-            border-left: 5px solid #007bff;
+            background: #fff;
+            border-left: 5px solid #3498db;
             border-radius: 4px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-            animation: slideIn 0.3s ease-out;
+            text-align: left;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            animation: slideDown 0.2s ease-out;
         }
 
-        /* 2. Pre-fill content using :before */
+        @keyframes slideDown {
+            from { opacity: 0; transform: translateY(-5px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* 2. Pre-fill Content */
         #result0:before { content: "Aurora Pleguezelo"; }
         #result15:before { content: "Alexandre Collin"; }
         #result16:before { content: "Alexandre Meunier"; }
-        #result17:before { content: "Alexandre Stanislawski"; }
-        #result150:before { content: "Zo Asmail"; }
+        #result22:before { content: "Alexandria Ocasio"; }
 
-        input[value="alexandre" i] ~ #results #result15,
-        input[value="alexandre" i] ~ #results #result16,
-        input[value="alexandre" i] ~ #results #result17 {
+        /* 3. MULTI-RESULT N-GRAM LOGIC */
+
+        /* Typing 'a' shows EVERYTHING starting with A */
+        input[value="a" i] ~ #results #result0,
+        input[value="a" i] ~ #results #result15,
+        input[value="a" i] ~ #results #result16,
+        input[value="a" i] ~ #results #result22 {
             display: block;
         }
 
+        /* Typing 'al' filters out Aurora, shows all Alexes */
+        input[value="al" i] ~ #results #result15,
+        input[value="al" i] ~ #results #result16,
+        input[value="al" i] ~ #results #result22 {
+            display: block;
+        }
+
+        /* Typing 'ale' filters out Aurora, shows all Alexes */
+        input[value="ale" i] ~ #results #result15,
+        input[value="ale" i] ~ #results #result16,
+        input[value="ale" i] ~ #results #result22 {
+            display: block;
+        }
+
+        /* Typing 'alex' filters out Aurora, shows all Alexes */
+        input[value="alex" i] ~ #results #result15,
+        input[value="alex" i] ~ #results #result16,
+        input[value="alex" i] ~ #results #result22 {
+            display: block;
+        }
+
+        /* Typing 'alexa' filters out Aurora, shows all Alexes */
+        input[value="alexa" i] ~ #results #result15,
+        input[value="alexa" i] ~ #results #result16,
+        input[value="alexa" i] ~ #results #result22 {
+            display: block;
+        }
+
+        /* Typing 'alexan' filters out Aurora, shows all Alexes */
+        input[value="alexan" i] ~ #results #result15,
+        input[value="alexan" i] ~ #results #result16,
+        input[value="alexan" i] ~ #results #result22 {
+            display: block;
+        }
+
+        /* Typing 'alexand' filters out Aurora, shows all Alexes */
+        input[value="alexand" i] ~ #results #result15,
+        input[value="alexand" i] ~ #results #result16,
+        input[value="alexand" i] ~ #results #result22 {
+            display: block;
+        }
+
+        /* Typing 'alexandr' filters out Aurora, shows all Alexes */
+        input[value="alexandr" i] ~ #results #result15,
+        input[value="alexandr" i] ~ #results #result16,
+        input[value="alexandr" i] ~ #results #result22 {
+            display: block;
+        }
+
+        /* Typing 'alexandrie' shows ONLY Alexandria */
+        input[value="alexandre" i] ~ #results #result15,
+        input[value="alexandre" i] ~ #results #result16 {
+            display: block;
+        }
+
+        /* Typing 'alexandri' shows ONLY Alexandria */
+        input[value="alexandri" i] ~ #results #result22,
+        input[value="alexandria" i] ~ #results #result22 {
+            display: block;
+        }
+
+        /* Aurora specific path */
+        input[value="au" i] ~ #results #result0,
+        input[value="aur" i] ~ #results #result0,
         input[value="aurora" i] ~ #results #result0 {
             display: block;
         }
 
-        input[value="zo" i] ~ #results #result150 {
-            display: block;
-        }
-
-        /* Bonus: Substring matching (Show all Alexandres if you just type 'Alex') */
-        input[value^="alex" i] ~ #results #result15,
-        input[value^="alex" i] ~ #results #result16,
-        input[value^="alex" i] ~ #results #result17 {
-            display: block;
-        }
-/*
-        input[value="tim" i] ~ #results {
-            background-color: #2ecc71;
-            color: white;
-            transform: scale(1.1);
-            box-shadow: 0 10px 20px rgba(46, 204, 113, 0.3);
-        }
-
-
-        input[value="tim" i] ~ #results::before {
-            content: "Access Granted: Welcome, Tim!";
-            font-weight: bold;
-        }
-
-
-        #results::before {
-            content: "Waiting for the right name...";
-        }
-*/
     </style>
 </head>
 <body>
 
     <div class="container">
-        <h2>Who are you?</h2>
-        <p>Type "alex" (case doesn't matter) to trigger the CSS.</p>
+        <h2>Directory Search</h2>
+        <p>Type "a", "al", or "alex" to see multiple results.</p>
         
-        <input type="search" placeholder="Search employees..." autocomplete="off"oninput="this.setAttribute('value', this.value)">
+        <input type="search" 
+               placeholder="Search by name..." 
+               autocomplete="off" 
+               oninput="this.setAttribute('value', this.value)">
 
         <div id="results">
             <div id="result0"></div>
             <div id="result15"></div>
             <div id="result16"></div>
-            <div id="result17"></div>
-            <div id="result150"></div>
+            <div id="result22"></div>
         </div>
     </div>
 
