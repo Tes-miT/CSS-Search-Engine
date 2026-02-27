@@ -55,6 +55,7 @@
             text-align: left;
             box-shadow: 0 2px 5px rgba(0,0,0,0.05);
             animation: slideDown 0.2s ease-out;
+            order: 100;
         }
 
         @keyframes slideDown {
@@ -76,6 +77,55 @@
         input[value="a" i] ~ #results #result16,
         input[value="a" i] ~ #results #result22 {
             display: block;
+            order: 1; /*High priority for First-Name*/
+        }
+
+        /* Typing 'Pleguezelo' shows result16, but puts it at the bottom */
+        input[value="p" i] ~ #results #result0,
+        input[value="pl" i] ~ #results #result0,
+        input[value="ple" i] ~ #results #result0,
+        input[value="pleg" i] ~ #results #result0,
+        input[value="plegu" i] ~ #results #result0,
+        input[value="plegue" i] ~ #results #result0,
+        input[value="pleguez" i] ~ #results #result0,
+        input[value="plegueze" i] ~ #results #result0,
+        input[value="pleguezel" i] ~ #results #result0,
+        input[value="pleguezelo" i] ~ #results #result0 {
+            display: block;
+            order: 50; /* Lower priority than first-name matches */
+        }
+        /* Typing 'Collin' shows result16, but puts it at the bottom */
+        input[value="c" i] ~ #results #result15,
+        input[value="co" i] ~ #results #result15,
+        input[value="col" i] ~ #results #result15,
+        input[value="coll" i] ~ #results #result15,
+        input[value="colli" i] ~ #results #result15,
+        input[value="collin" i] ~ #results #result15 {
+            display: block;
+            order: 50; /* Lower priority than first-name matches */
+        }
+
+        /* Typing 'Meunier' shows result16, but puts it at the bottom */
+        input[value="m" i] ~ #results #result16,
+        input[value="me" i] ~ #results #result16,
+        input[value="meu" i] ~ #results #result16,
+        input[value="meun" i] ~ #results #result16,
+        input[value="meuni" i] ~ #results #result16,
+        input[value="meunie" i] ~ #results #result16,
+        input[value="meunier" i] ~ #results #result16 {
+            display: block;
+            order: 50; /* Lower priority than first-name matches */
+        }
+
+        /* Typing 'Ocasio' shows result16, but puts it at the bottom */
+        input[value="o" i] ~ #results #result22,
+        input[value="oc" i] ~ #results #result22,
+        input[value="oca" i] ~ #results #result22,
+        input[value="ocas" i] ~ #results #result22,
+        input[value="ocasi" i] ~ #results #result22,
+        input[value="ocasio" i] ~ #results #result22 {
+            display: block;
+            order: 50; /* Lower priority than first-name matches */
         }
 
         /* Typing 'al' filters out Aurora, shows all Alexes */
@@ -83,6 +133,7 @@
         input[value="al" i] ~ #results #result16,
         input[value="al" i] ~ #results #result22 {
             display: block;
+            order: 1;
         }
 
         /* Typing 'ale' filters out Aurora, shows all Alexes */
@@ -90,6 +141,7 @@
         input[value="ale" i] ~ #results #result16,
         input[value="ale" i] ~ #results #result22 {
             display: block;
+            order: 1;
         }
 
         /* Typing 'alex' filters out Aurora, shows all Alexes */
@@ -97,6 +149,7 @@
         input[value="alex" i] ~ #results #result16,
         input[value="alex" i] ~ #results #result22 {
             display: block;
+            order: 1;
         }
 
         /* Typing 'alexa' filters out Aurora, shows all Alexes */
@@ -104,6 +157,7 @@
         input[value="alexa" i] ~ #results #result16,
         input[value="alexa" i] ~ #results #result22 {
             display: block;
+            order: 1;
         }
 
         /* Typing 'alexan' filters out Aurora, shows all Alexes */
@@ -111,6 +165,7 @@
         input[value="alexan" i] ~ #results #result16,
         input[value="alexan" i] ~ #results #result22 {
             display: block;
+            order: 1;
         }
 
         /* Typing 'alexand' filters out Aurora, shows all Alexes */
@@ -118,6 +173,7 @@
         input[value="alexand" i] ~ #results #result16,
         input[value="alexand" i] ~ #results #result22 {
             display: block;
+            order: 1;
         }
 
         /* Typing 'alexandr' filters out Aurora, shows all Alexes */
@@ -125,25 +181,31 @@
         input[value="alexandr" i] ~ #results #result16,
         input[value="alexandr" i] ~ #results #result22 {
             display: block;
+            order: 1;
         }
 
         /* Typing 'alexandrie' shows ONLY Alexandria */
         input[value="alexandre" i] ~ #results #result15,
         input[value="alexandre" i] ~ #results #result16 {
             display: block;
+            order: 1;
         }
 
         /* Typing 'alexandri' shows ONLY Alexandria */
         input[value="alexandri" i] ~ #results #result22,
         input[value="alexandria" i] ~ #results #result22 {
             display: block;
+            order: 1;
         }
 
         /* Aurora specific path */
         input[value="au" i] ~ #results #result0,
         input[value="aur" i] ~ #results #result0,
+        input[value="auro" i] ~ #results #result0,
+        input[value="auror" i] ~ #results #result0,
         input[value="aurora" i] ~ #results #result0 {
             display: block;
+            order: 1;
         }
 
     </style>
