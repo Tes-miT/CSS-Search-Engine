@@ -75,3 +75,14 @@ input[value="a" i] ~ #results #result15::before {content: "𝐀lexandre Collin";
 input[value="a" i] ~ #results #result16::before {content: "𝐀lexandre Meunier";}
 input[value="a" i] ~ #results #result22::before {content: "𝐀lexandria Ocasio";}
 
+/* Default Display for following of whitespace*/
+input[value="alexandre" i] ~ #results #result15,
+input[value="alexandre" i] ~ #results #result16,
+input[value="alexandre " i] ~ #results #result15,
+input[value="alexandre " i] ~ #results #result16 {
+    display: block !important;
+    order: 1;
+}
+/* Default bolding for the trailing space */
+input[value="alexandre " i] ~ #results #result15::before { content: "𝐀𝐋𝐄𝐗𝐀𝐍𝐃𝐑𝐄 Collin"; }
+input[value="alexandre " i] ~ #results #result16::before { content: "𝐀𝐋𝐄𝐗𝐀𝐍𝐃𝐑𝐄 Meunier"; }

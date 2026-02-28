@@ -35,4 +35,24 @@ input[value="alexa" i] ~ #results #result15::before { content: "𝐀𝐥𝐞𝐱
 input[value="alexan" i] ~ #results #result15::before { content: "𝐀𝐥𝐞𝐱𝐚𝐧dre Collin"; }
 input[value="alexand" i] ~ #results #result15::before { content: "𝐀𝐥𝐞𝐱𝐚𝐧𝐝re Collin"; }
 input[value="alexandr" i] ~ #results #result15::before { content: "𝐀𝐥𝐞𝐱𝐚𝐧𝐝𝐫e Collin"; }
-input[value="alexandre" i] ~ #results #result15::before { content: "𝐀𝐥𝐞𝐱𝐚𝐧𝐝𝐫𝐞 Collin"; }
+input[value="alexandre" i] ~ #results #result15::before { content: "𝐀𝐥𝐞𝐱𝐚𝐧𝐝𝐫𝐞 Collin"; }i
+
+/* --- --- --- */
+
+input[value="alexandre " i] ~ #results #result15, 
+input[value="alexandre c" i] ~ #results #result15, 
+input[value="alexandre co" i] ~ #results #result15, 
+input[value="alexandre col" i] ~ #results #result15, 
+input[value="alexandre coll" i] ~ #results #result15, 
+input[value="alexandre colli" i] ~ #results #result15,/* 
+input[value="alexandre collin" i] ~ #results #result15*/ {
+	display: block !important;
+	order: 1;
+}
+/*input[value="alexandre " i] ~ #results #result15::before { content: "𝐀𝐥𝐞𝐱𝐚𝐧𝐝𝐫𝐞 Collin"; }*/
+input[value="alexandre c" i] ~ #results #result15::before { content: "𝐀𝐥𝐞𝐱𝐚𝐧𝐝𝐫𝐞 𝐂ollin"; }
+input[value="alexandre co" i] ~ #results #result15::before { content: "𝐀𝐥𝐞𝐱𝐚𝐧𝐝𝐫𝐞 𝐂𝐨llin"; }
+input[value="alexandre col" i] ~ #results #result15::before { content: "𝐀𝐥𝐞𝐱𝐚𝐧𝐝𝐫𝐞 𝐂𝐨𝐥lin"; }
+input[value="alexandre coll" i] ~ #results #result15::before { content: "𝐀𝐥𝐞𝐱𝐚𝐧𝐝𝐫𝐞 𝐂𝐨𝐥𝐥in"; }
+input[value="alexandre colli" i] ~ #results #result15::before { content: "𝐀𝐥𝐞𝐱𝐚𝐧𝐝𝐫𝐞 𝐂𝐨𝐥𝐥𝐢n"; }
+input[value="alexandre collin" i] ~ #results #result15::before { content: "𝐀𝐥𝐞𝐱𝐚𝐧𝐝𝐫𝐞 𝐂𝐨𝐥𝐥𝐢𝐧"; }

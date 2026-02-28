@@ -38,3 +38,25 @@ input[value="alexan" i] ~ #results #result16::before { content: "𝐀𝐥𝐞�
 input[value="alexand" i] ~ #results #result16::before { content: "𝐀𝐥𝐞𝐱𝐚𝐧𝐝re Meunier"; }
 input[value="alexandr" i] ~ #results #result16::before { content: "𝐀𝐥𝐞𝐱𝐚𝐧𝐝𝐫e Meunier"; }
 input[value="alexandre" i] ~ #results #result16::before { content: "𝐀𝐥𝐞𝐱𝐚𝐧𝐝𝐫𝐞 Meunier"; }
+
+/* --- --- --- */
+
+input[value="alexandre " i] ~ #results #result16, 
+input[value="alexandre m" i] ~ #results #result16, 
+input[value="alexandre me" i] ~ #results #result16, 
+input[value="alexandre meu" i] ~ #results #result16, 
+input[value="alexandre meun" i] ~ #results #result16, 
+input[value="alexandre meuni" i] ~ #results #result16, 
+input[value="alexandre meunie" i] ~ #results #result16/*, 
+input[value="alexandre meunier" i] ~ #results #result16*/ {
+	display: block !important;
+	order: 1;
+}
+/*input[value="alexandre " i] ~ #results #result16::before { content: "𝐀𝐥𝐞𝐱𝐚𝐧𝐝𝐫𝐞 Meunier"; }*/
+input[value="alexandre m" i] ~ #results #result16::before { content: "𝐀𝐥𝐞𝐱𝐚𝐧𝐝𝐫𝐞 𝐌eunier"; }
+input[value="alexandre me" i] ~ #results #result16::before { content: "𝐀𝐥𝐞𝐱𝐚𝐧𝐝𝐫𝐞 𝐌𝐞unier"; }
+input[value="alexandre meu" i] ~ #results #result16::before { content: "𝐀𝐥𝐞𝐱𝐚𝐧𝐝𝐫𝐞 𝐌𝐞𝐮nier"; }
+input[value="alexandre meun" i] ~ #results #result16::before { content: "𝐀𝐥𝐞𝐱𝐚𝐧𝐝𝐫𝐞 𝐌𝐞𝐮𝐧ier"; }
+input[value="alexandre meuni" i] ~ #results #result16::before { content: "𝐀𝐥𝐞𝐱𝐚𝐧𝐝𝐫𝐞 𝐌𝐞𝐮𝐧𝐢er"; }
+input[value="alexandre meunie" i] ~ #results #result16::before { content: "𝐀𝐥𝐞𝐱𝐚𝐧𝐝𝐫𝐞 𝐌𝐞𝐮𝐧𝐢𝐞r"; }
+input[value="alexandre meunier" i] ~ #results #result16::before { content: "𝐀𝐥𝐞𝐱𝐚𝐧𝐝𝐫𝐞 𝐌𝐞𝐮𝐧𝐢𝐞𝐫"; }

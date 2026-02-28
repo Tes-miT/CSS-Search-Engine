@@ -39,3 +39,22 @@ input[value="alexandr" i] ~ #results #result22::before { content: "𝐀𝐥𝐞�
 input[value="alexandri" i] ~ #results #result22::before { content: "𝐀𝐥𝐞𝐱𝐚𝐧𝐝𝐫𝐢a Ocasio"; }
 input[value="alexandria" i] ~ #results #result22::before { content: "𝐀𝐥𝐞𝐱𝐚𝐧𝐝𝐫𝐢𝐚 Ocasio"; }
 
+/* --- --- --- */
+
+input[value="alexandria " i] ~ #results #result22, 
+input[value="alexandria o" i] ~ #results #result22, 
+input[value="alexandria oc" i] ~ #results #result22, 
+input[value="alexandria oca" i] ~ #results #result22, 
+input[value="alexandria ocas" i] ~ #results #result22, 
+input[value="alexandria ocasi" i] ~ #results #result22, 
+input[value="alexandria ocasio" i] ~ #results #result22 {
+	display: block;
+	order: 1;
+}
+input[value="alexandria " i] ~ #results #result22::before { content: "𝐀𝐥𝐞𝐱𝐚𝐧𝐝𝐫𝐢𝐚 Ocasio"; }
+input[value="alexandria o" i] ~ #results #result22::before { content: "𝐀𝐥𝐞𝐱𝐚𝐧𝐝𝐫𝐢𝐚 𝐎casio"; }
+input[value="alexandria oc" i] ~ #results #result22::before { content: "𝐀𝐥𝐞𝐱𝐚𝐧𝐝𝐫𝐢𝐚 𝐎𝐜asio"; }
+input[value="alexandria oca" i] ~ #results #result22::before { content: "𝐀𝐥𝐞𝐱𝐚𝐧𝐝𝐫𝐢𝐚 𝐎𝐜𝐚sio"; }
+input[value="alexandria ocas" i] ~ #results #result22::before { content: "𝐀𝐥𝐞𝐱𝐚𝐧𝐝𝐫𝐢𝐚 𝐎𝐜𝐚sio"; }
+input[value="alexandria ocasi" i] ~ #results #result22::before { content: "𝐀𝐥𝐞𝐱𝐚𝐧𝐝𝐫𝐢𝐚 𝐎𝐜𝐚𝐬io"; }
+input[value="alexandria ocasio" i] ~ #results #result22::before { content: "𝐀𝐥𝐞𝐱𝐚𝐧𝐝𝐫𝐢𝐚 𝐎𝐜𝐚𝐬𝐢o"; }

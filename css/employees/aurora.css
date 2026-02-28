@@ -23,7 +23,9 @@ input[value="plegueze" i] ~ #results #result0::before { content: "Aurora 𝐏�
 input[value="pleguezel" i] ~ #results #result0::before { content: "Aurora 𝐏𝐥𝐞𝐠𝐮𝐞𝐳𝐞𝐥o"; }
 input[value="pleguezelo" i] ~ #results #result0::before { content: "Aurora 𝐏𝐥𝐞𝐠𝐮𝐞𝐳𝐞𝐥𝐨"; }
 
-/*By searching for 'Aurora' directly*/
+
+/* --- --- --- */
+
 input[value="au" i] ~ #results #result0,
 input[value="aur" i] ~ #results #result0,
 input[value="auro" i] ~ #results #result0,
@@ -38,4 +40,32 @@ input[value="aur" i] ~ #results #result0::before { content: "𝐀𝐮𝐫ora Ple
 input[value="auro" i] ~ #results #result0::before { content: "𝐀𝐮𝐫𝐨ra Pleguezelo"; }
 input[value="auror" i] ~ #results #result0::before { content: "𝐀𝐮𝐫𝐨𝐫a Pleguezelo"; }
 input[value="aurora" i] ~ #results #result0::before { content: "𝐀𝐮𝐫𝐨𝐫𝐚 Pleguezelo"; }
+
+/* --- --- --- */
+
+input[value="aurora " i] ~ #results #result0,
+input[value="aurora p" i] ~ #results #result0,
+input[value="aurora pl" i] ~ #results #result0,
+input[value="aurora ple" i] ~ #results #result0,
+input[value="aurora pleg" i] ~ #results #result0,
+input[value="aurora plegu" i] ~ #results #result0,
+input[value="aurora plegue" i] ~ #results #result0,
+input[value="aurora pleguez" i] ~ #results #result0,
+input[value="aurora plegueze" i] ~ #results #result0,
+input[value="aurora pleguezel" i] ~ #results #result0,
+input[value="aurora pleguezelo" i] ~ #results #result0 {
+	display: block;
+        order: 1;
+}
+input[value="aurora " i] ~ #results #result0::before { content: "𝐀𝐮𝐫𝐨𝐫𝐚 Pleguezelo"; }
+input[value="aurora p" i] ~ #results #result0::before { content: "𝐀𝐮𝐫𝐨𝐫𝐚 𝐏leguezelo"; }
+input[value="aurora pl" i] ~ #results #result0::before { content: "𝐀𝐮𝐫𝐨𝐫𝐚 𝐏𝐥egeuzelo"; }
+input[value="aurora ple" i] ~ #results #result0::before { content: "𝐀𝐮𝐫𝐨𝐫𝐚 𝐏𝐥𝐞guezelo"; }
+input[value="aurora pleg" i] ~ #results #result0::before { content: "𝐀𝐮𝐫𝐨𝐫𝐚 𝐏𝐥𝐞𝐠uezelo"; }
+input[value="aurora plegu" i] ~ #results #result0::before { content: "𝐀𝐮𝐫𝐨𝐫𝐚 𝐏𝐥𝐞𝐠𝐮ezelo"; }
+input[value="aurora plegue" i] ~ #results #result0::before { content: "𝐀𝐮𝐫𝐨𝐫𝐚 𝐏𝐥𝐞𝐠𝐮𝐞zelo"; }
+input[value="aurora pleguez" i] ~ #results #result0::before { content: "𝐀𝐮𝐫𝐨𝐫𝐚 𝐏𝐥𝐞𝐠𝐮𝐞𝐳elo"; }
+input[value="aurora plegueze" i] ~ #results #result0::before { content: "𝐀𝐮𝐫𝐨𝐫𝐚 𝐏𝐥𝐞𝐠𝐮𝐞𝐳𝐞lo"; }
+input[value="aurora pleguezel" i] ~ #results #result0::before { content: "𝐀𝐮𝐫𝐨𝐫𝐚 𝐏𝐥𝐞𝐠𝐮𝐞𝐳𝐞𝐥o"; }
+input[value="aurora pleguezelo" i] ~ #results #result0::before { content: "𝐀𝐮𝐫𝐨𝐫𝐚 𝐏𝐥𝐞𝐠𝐮𝐞𝐳𝐞𝐥𝐨"; }
 
