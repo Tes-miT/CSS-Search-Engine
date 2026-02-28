@@ -1,0 +1,38 @@
+/* Typing 'Collin' shows result16, but puts it at the bottom */
+input[value="c" i] ~ #results #result15,
+input[value="co" i] ~ #results #result15,
+input[value="col" i] ~ #results #result15,
+input[value="coll" i] ~ #results #result15,
+input[value="colli" i] ~ #results #result15,
+input[value="collin" i] ~ #results #result15 {
+	display: block;
+	order: 50; /* Lower priority than first-name matches */
+}
+input[value="c" i] ~ #results #result15::before { content: "Alexandre 𝐂ollin"; }
+input[value="co" i] ~ #results #result15::before { content: "Alexandre 𝐂𝐨llin"; }
+input[value="col" i] ~ #results #result15::before { content: "Alexandre 𝐂𝐨𝐥lin"; }
+input[value="coll" i] ~ #results #result15::before { content: "Alexandre 𝐂𝐨𝐥𝐥in"; }
+input[value="colli" i] ~ #results #result15::before { content: "Alexandre 𝐂𝐨𝐥𝐥𝐢n"; }
+input[value="collin" i] ~ #results #result15::before { content: "Alexandre 𝐂𝐨𝐥𝐥𝐢𝐧"; }
+
+/* --- --- --- */
+
+input[value="al" i] ~ #results #result15,
+input[value="ale" i] ~ #results #result15,
+input[value="alex" i] ~ #results #result15,
+input[value="alexa" i] ~ #results #result15,
+input[value="alexan" i] ~ #results #result15,
+input[value="alexand" i] ~ #results #result15,
+input[value="alexandr" i] ~ #results #result15,
+input[value="alexandre" i] ~ #results #result15 {
+	display: block;
+	order: 1;
+}
+input[value="al" i] ~ #results #result15::before { content: "𝐀𝐥exandre Collin"; }
+input[value="ale" i] ~ #results #result15::before { content: "𝐀𝐥𝐞xandre Collin"; }
+input[value="alex" i] ~ #results #result15::before { content: "𝐀𝐥𝐞𝐱andre Collin"; }
+input[value="alexa" i] ~ #results #result15::before { content: "𝐀𝐥𝐞𝐱𝐚ndre Collin"; }
+input[value="alexan" i] ~ #results #result15::before { content: "𝐀𝐥𝐞𝐱𝐚𝐧dre Collin"; }
+input[value="alexand" i] ~ #results #result15::before { content: "𝐀𝐥𝐞𝐱𝐚𝐧𝐝re Collin"; }
+input[value="alexandr" i] ~ #results #result15::before { content: "𝐀𝐥𝐞𝐱𝐚𝐧𝐝𝐫e Collin"; }
+input[value="alexandre" i] ~ #results #result15::before { content: "𝐀𝐥𝐞𝐱𝐚𝐧𝐝𝐫𝐞 Collin"; }

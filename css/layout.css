@@ -1,0 +1,77 @@
+body {
+	font-family: 'Segoe UI', sans-serif;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding-top: 50px;
+	background-color: #f4f4f9;
+}
+
+.container {
+	background: white;
+	padding: 2rem;
+	border-radius: 8px;
+	box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+	text-align: center;
+	width: 450px;
+}
+
+input {
+	padding: 12px;
+	font-size: 1.1rem;
+	border: 2px solid #ddd;
+	border-radius: 25px;
+	outline: none;
+	transition: all 0.3s;
+	width: 90%;
+	margin-bottom: 20px;
+}
+
+input:focus {
+	border-color: #3498db;
+	box-shadow: 0 0 8px rgba(52, 152, 219, 0.2);
+}
+
+#results {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+}
+
+/* 1. Hide all result divs by default */
+#results div {
+	display: none;
+	padding: 15px;
+	background: #fff;
+	border-left: 5px solid #3498db;
+	border-radius: 4px;
+	text-align: left;
+	box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+	animation: slideDown 0.2s ease-out;
+	order: 100;
+}
+
+@keyframes slideDown {
+	from { opacity: 0; transform: translateY(-5px); }
+	to { opacity: 1; transform: translateY(0); }
+}
+
+/* 2. Pre-fill Content */
+#result0:before { content: "Aurora Pleguezelo"; }
+#result15:before { content: "Alexandre Collin"; }
+#result16:before { content: "Alexandre Meunier"; }
+#result22:before { content: "Alexandria Ocasio"; }
+
+/* Typing 'a' shows EVERYTHING starting with A */
+input[value="a" i] ~ #results #result0,
+input[value="a" i] ~ #results #result15,
+input[value="a" i] ~ #results #result16,
+input[value="a" i] ~ #results #result22 {
+	display: block;
+	order: 1; /*High priority for First-Name*/
+}
+input[value="a" i] ~ #results #result0::before {content: "𝐀urora Pleguezelo";}
+input[value="a" i] ~ #results #result15::before {content: "𝐀lexandre Collin";}
+input[value="a" i] ~ #results #result16::before {content: "𝐀lexandre Meunier";}
+input[value="a" i] ~ #results #result22::before {content: "𝐀lexandria Ocasio";}
+

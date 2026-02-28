@@ -1,0 +1,40 @@
+/* Typing 'Meunier' shows employee, but puts it at the bottom */
+input[value="m" i] ~ #results #result16,
+input[value="me" i] ~ #results #result16,
+input[value="meu" i] ~ #results #result16,
+input[value="meun" i] ~ #results #result16,
+input[value="meuni" i] ~ #results #result16,
+input[value="meunie" i] ~ #results #result16,
+input[value="meunier" i] ~ #results #result16 {
+	display: block;
+	order: 50; /* Lower priority than first-name matches */
+}
+input[value="m" i] ~ #results #result16::before { content: "Alexandre 𝐌eunier"; }
+input[value="me" i] ~ #results #result16::before { content: "Alexandre 𝐌𝐞unier"; }
+input[value="meu" i] ~ #results #result16::before { content: "Alexandre 𝐌𝐞𝐮nier"; }
+input[value="meun" i] ~ #results #result16::before { content: "Alexandre 𝐌𝐞𝐮𝐧ier"; }
+input[value="meuni" i] ~ #results #result16::before { content: "Alexandre 𝐌𝐞𝐮𝐧𝐢er"; }
+input[value="meunie" i] ~ #results #result16::before { content: "Alexandre 𝐌𝐞𝐮𝐧𝐢𝐞r"; }
+input[value="meunier" i] ~ #results #result16::before { content: "Alexandre 𝐌𝐞𝐮𝐧𝐢𝐞𝐫"; }
+
+/* --- --- --- */
+
+input[value="al" i] ~ #results #result16,
+input[value="ale" i] ~ #results #result16,
+input[value="alex" i] ~ #results #result16,
+input[value="alexa" i] ~ #results #result16,
+input[value="alexan" i] ~ #results #result16,
+input[value="alexand" i] ~ #results #result16,
+input[value="alexandr" i] ~ #results #result16,
+input[value="alexandre" i] ~ #results #result16 {
+	display: block;
+	order: 1;
+}
+input[value="al" i] ~ #results #result16::before { content: "𝐀𝐥exandre Meunier"; }
+input[value="ale" i] ~ #results #result16::before { content: "𝐀𝐥𝐞xandre Meunier"; }
+input[value="alex" i] ~ #results #result16::before { content: "𝐀𝐥𝐞𝐱andre Meunier"; }
+input[value="alexa" i] ~ #results #result16::before { content: "𝐀𝐥𝐞𝐱𝐚ndre Meunier"; }
+input[value="alexan" i] ~ #results #result16::before { content: "𝐀𝐥𝐞𝐱𝐚𝐧dre Meunier"; }
+input[value="alexand" i] ~ #results #result16::before { content: "𝐀𝐥𝐞𝐱𝐚𝐧𝐝re Meunier"; }
+input[value="alexandr" i] ~ #results #result16::before { content: "𝐀𝐥𝐞𝐱𝐚𝐧𝐝𝐫e Meunier"; }
+input[value="alexandre" i] ~ #results #result16::before { content: "𝐀𝐥𝐞𝐱𝐚𝐧𝐝𝐫𝐞 Meunier"; }

@@ -1,0 +1,41 @@
+/* Searching 'Ocasio' shows employee, but puts it at the bottom */
+input[value="o" i] ~ #results #result22,
+input[value="oc" i] ~ #results #result22,
+input[value="oca" i] ~ #results #result22,
+input[value="ocas" i] ~ #results #result22,
+input[value="ocasi" i] ~ #results #result22,
+input[value="ocasio" i] ~ #results #result22 {
+	display: block;
+	order: 50; /* Lower priority than first-name matches */
+}
+input[value="o" i] ~ #results #result22::before { content: "Alexandria 𝐎casio"; }
+input[value="oc" i] ~ #results #result22::before { content: "Alexandria 𝐎𝐜asio"; }
+input[value="oca" i] ~ #results #result22::before { content: "Alexandria 𝐎𝐜𝐚sio"; }
+input[value="ocas" i] ~ #results #result22::before { content: "Alexandria 𝐎𝐜𝐚𝐬io"; }
+input[value="ocasi" i] ~ #results #result22::before { content: "Alexandria 𝐎𝐜𝐚𝐬𝐢o"; }
+input[value="ocasio" i] ~ #results #result22::before { content: "Alexandria 𝐎𝐜𝐚𝐬𝐢𝐨"; }
+
+/* --- --- --- */
+
+input[value="al" i] ~ #results #result22,
+input[value="ale" i] ~ #results #result22,
+input[value="alex" i] ~ #results #result22,
+input[value="alexa" i] ~ #results #result22,
+input[value="alexan" i] ~ #results #result22,
+input[value="alexand" i] ~ #results #result22,
+input[value="alexandr" i] ~ #results #result22,
+input[value="alexandri" i] ~ #results #result22,
+input[value="alexandria" i] ~ #results #result22 {
+	display: block;
+	order: 1;
+}
+input[value="al" i] ~ #results #result22::before { content: "𝐀𝐥exandria Ocasio"; }
+input[value="ale" i] ~ #results #result22::before { content: "𝐀𝐥𝐞xandria Ocasio"; }
+input[value="alex" i] ~ #results #result22::before { content: "𝐀𝐥𝐞𝐱andria Ocasio"; }
+input[value="alexa" i] ~ #results #result22::before { content: "𝐀𝐥𝐞𝐱𝐚ndria Ocasio"; }
+input[value="alexan" i] ~ #results #result22::before { content: "𝐀𝐥𝐞𝐱𝐚𝐧dria Ocasio"; }
+input[value="alexand" i] ~ #results #result22::before { content: "𝐀𝐥𝐞𝐱𝐚𝐧𝐝ria Ocasio"; }
+input[value="alexandr" i] ~ #results #result22::before { content: "𝐀𝐥𝐞𝐱𝐚𝐧𝐝𝐫ia Ocasio"; }
+input[value="alexandri" i] ~ #results #result22::before { content: "𝐀𝐥𝐞𝐱𝐚𝐧𝐝𝐫𝐢a Ocasio"; }
+input[value="alexandria" i] ~ #results #result22::before { content: "𝐀𝐥𝐞𝐱𝐚𝐧𝐝𝐫𝐢𝐚 Ocasio"; }
+

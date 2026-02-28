@@ -1,0 +1,41 @@
+/* Searching for 'Pleguezelo' directly */
+input[value="p" i] ~ #results #result0,
+input[value="pl" i] ~ #results #result0,
+input[value="ple" i] ~ #results #result0,
+input[value="pleg" i] ~ #results #result0,
+input[value="plegu" i] ~ #results #result0,
+input[value="plegue" i] ~ #results #result0,
+input[value="pleguez" i] ~ #results #result0,
+input[value="plegueze" i] ~ #results #result0,
+input[value="pleguezel" i] ~ #results #result0,
+input[value="pleguezelo" i] ~ #results #result0 {
+	display: block;
+	order: 50; /* Lower priority than first-name matches */
+}
+input[value="p" i] ~ #results #result0::before { content: "Aurora 𝐏leguezelo"; }
+input[value="pl" i] ~ #results #result0::before { content: "Aurora 𝐏𝐥eguezelo"; }
+input[value="ple" i] ~ #results #result0::before { content: "Aurora 𝐏𝐥𝐞guezelo"; }
+input[value="pleg" i] ~ #results #result0::before { content: "Aurora 𝐏𝐥𝐞𝐠uezelo"; }
+input[value="plegu" i] ~ #results #result0::before { content: "Aurora 𝐏𝐥𝐞𝐠𝐮ezelo"; }
+input[value="plegue" i] ~ #results #result0::before { content: "Aurora 𝐏𝐥𝐞𝐠𝐮𝐞zelo"; }
+input[value="pleguez" i] ~ #results #result0::before { content: "Aurora 𝐏𝐥𝐞𝐠𝐮𝐞𝐳elo"; }
+input[value="plegueze" i] ~ #results #result0::before { content: "Aurora 𝐏𝐥𝐞𝐠𝐮𝐞𝐳𝐞lo"; }
+input[value="pleguezel" i] ~ #results #result0::before { content: "Aurora 𝐏𝐥𝐞𝐠𝐮𝐞𝐳𝐞𝐥o"; }
+input[value="pleguezelo" i] ~ #results #result0::before { content: "Aurora 𝐏𝐥𝐞𝐠𝐮𝐞𝐳𝐞𝐥𝐨"; }
+
+/*By searching for 'Aurora' directly*/
+input[value="au" i] ~ #results #result0,
+input[value="aur" i] ~ #results #result0,
+input[value="auro" i] ~ #results #result0,
+input[value="auror" i] ~ #results #result0,
+input[value="aurora" i] ~ #results #result0 {
+	display: block;
+        order: 1;
+}
+input[value="a" i] ~ #results #result0::before { content: "𝐀urora Pleguezelo"; }
+input[value="au" i] ~ #results #result0::before { content: "𝐀𝐮rora Pleguezelo"; }
+input[value="aur" i] ~ #results #result0::before { content: "𝐀𝐮𝐫ora Pleguezelo"; }
+input[value="auro" i] ~ #results #result0::before { content: "𝐀𝐮𝐫𝐨ra Pleguezelo"; }
+input[value="auror" i] ~ #results #result0::before { content: "𝐀𝐮𝐫𝐨𝐫a Pleguezelo"; }
+input[value="aurora" i] ~ #results #result0::before { content: "𝐀𝐮𝐫𝐨𝐫𝐚 Pleguezelo"; }
+

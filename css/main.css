@@ -1,0 +1,8 @@
+/*Core UI Styles*/
+@import "layout.css";
+
+/*Sourcing Employee Data*/
+@import "employees/aurora.css";
+@import "employees/alexandre.15.css";
+@import "employees/alexandre.16.css";
+@import "employees/alexandria.22.css";
